@@ -2,12 +2,12 @@
 
 This file exists to turn the raw seed document into actionable, evolving structure *without* treating it as final.
 
-## What `SEED.md` is
+## What [`SEED.md`](../SEED.md) is
 
 - A structured brain dump from an initial kickoff conversation.
 - Useful as a *starting context*, not an authoritative framework.
 
-## Major themes already present (from `SEED.md`)
+## Major themes already present (from [`SEED.md`](../SEED.md))
 
 - Agentic dev is already practical: agents can implement, run tests, debug, refactor, and open PRs.
 - Long-running sessions matter: context management/compaction enables multi-file work.
@@ -22,9 +22,9 @@ This file exists to turn the raw seed document into actionable, evolving structu
 
 ## How this maps to the repo (practical)
 
-- Use `articles/` for *external sources* (each summary must include `source_url`).
-- Use `docs/` for *our evolving synthesis and process* (like this file).
-- Use `AGENT_LOG.md` to record what’s been processed and why.
+- Use [`articles/`](../articles) for *external sources* (each summary must include `source_url`).
+- Use [`docs/`](../docs) for *our evolving synthesis and process* (like this file).
+- Use [`AGENT_LOG.md`](../AGENT_LOG.md) to record what’s been processed and why.
 
 ## Research questions to drive capture (initial, not exhaustive)
 
@@ -37,6 +37,5 @@ This file exists to turn the raw seed document into actionable, evolving structu
 
 ## Next small refinements (suggested)
 
-- Add a “claims to validate” list extracted from `SEED.md` (with wording preserved) and track evidence as sources come in.
+- Add a “claims to validate” list extracted from [`SEED.md`](../SEED.md) (with wording preserved) and track evidence as sources come in.
 - Create one evolving “Narrative Outline” doc once 10–20 sources are summarized.
-

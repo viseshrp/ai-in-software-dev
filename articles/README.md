@@ -9,7 +9,7 @@ This folder holds one markdown file per source article/post, summarized into str
 
 ## Required fields
 
-For a file to show up in `INDEX.md`, it must include frontmatter keys:
+For a file to show up in [`INDEX.md`](../INDEX.md), it must include frontmatter keys:
 
 - `title`
 - `source_url`
@@ -21,4 +21,3 @@ Use:
 `python3 scripts/new_article.py --title "..." --url "https://..." --published 2025-10-01`
 
 Then fill in the sections based strictly on the source.
-

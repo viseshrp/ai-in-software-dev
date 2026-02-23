@@ -6,7 +6,7 @@ Primary goal: research, synthesis, and ecosystem understanding (separating signa
 
 ## Workflow (high level)
 
-1. Capture an article into `articles/` as a structured summary (signal > fluff).
+1. Capture an article into [`articles/`](articles) as a structured summary (signal > fluff).
 2. Keep original links for traceability.
 3. Avoid hallucinating content not present in the source.
 4. Let themes emerge before enforcing rigid categories.

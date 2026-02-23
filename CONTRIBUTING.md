@@ -13,6 +13,5 @@ This repo is an incremental knowledge base. Keep changes small and traceable.
 
 ## Version control
 
-- Prefer one article per commit (plus the updated `INDEX.md`).
+- Prefer one article per commit (plus the updated [`INDEX.md`](INDEX.md)).
 - Keep commit messages descriptive (e.g., “Summarize: <title>”).
-
