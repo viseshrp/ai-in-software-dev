@@ -88,3 +88,95 @@ This is a running log of work performed in this repository so future agents can 
   - Kept commands as code (no linking inside command snippets); only converted cross-document references.
 - Commands run:
   - `rg -n "/Users/|\\.md:1" -S .`
+
+## 2026-02-23 — Repo docs read + experience-capture operating mode
+
+- What I did: Read all markdown docs currently in-repo to establish operating context, then aligned on a standing workflow: you provide experience entries and I place them in the most appropriate repo location.
+- Files created/modified:
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Use doc intent to route new content:
+    - Experience tied to an external source/article goes in `articles/<year>/...` using the summary template and required `source_url`.
+    - Cross-source patterns and framework changes go in `docs/` synthesis/process docs.
+    - Session-level traceability and operational notes go in [`AGENT_LOG.md`](AGENT_LOG.md).
+  - Keep updates incremental and commit-friendly to preserve reviewability and historical traceability.
+- Assumptions:
+  - “Read all the docs” refers to all tracked markdown docs currently present in this repository.
+  - Future “experience” entries may be either source-backed observations or first-person workflow notes; placement will depend on which type you provide.
+- Commands run (if any):
+  - `pwd && rg --files -g '*.md'`
+  - `ls -la`
+  - `cat AGENTS.md`
+  - `cat README.md`
+  - `cat CONTRIBUTING.md`
+  - `cat INDEX.md`
+  - `cat docs/PROJECT_PROMPT.md`
+  - `cat docs/SUMMARY_GUIDE.md`
+  - `cat docs/SYNTHESIS_GUIDE.md`
+  - `cat docs/SEED_MAP.md`
+  - `cat SEED.md`
+  - `cat AGENT_LOG.md`
+  - `cat articles/README.md`
+  - `cat templates/article-summary.md`
+- Test results (if relevant):
+  - N/A (documentation read/log update only).
+- Open questions / ambiguities:
+  - For pure first-person experience entries without external sources, should the primary long-form home be `docs/` (new dedicated experience log) or remain only in [`AGENT_LOG.md`](AGENT_LOG.md) plus occasional synthesis updates?
+- Areas needing clarification:
+  - Preferred granularity for each experience entry (quick bullet vs structured mini-report).
+- Improvements to your own workflow:
+  - Continue logging each processing session immediately after context-read or content-write to keep assumptions and routing decisions explicit.
+
+## 2026-02-23 — Experience entry: agents harden after bugfix
+
+- What I did: Captured a first-person experience note about agent behavior during bug fixing (fix + preventative improvements).
+- Files created/modified:
+  - Created: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+- Decisions made (and why):
+  - Placed first-person experiences in `docs/` (not `articles/`) since they are not external sources and do not have a `source_url`.
+  - Used a dated entry format so later synthesis can reference stable timestamps.
+- Assumptions:
+  - These first-person entries may be distilled later into synthesis docs once patterns accumulate.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A
+- Open questions / ambiguities:
+  - Should experience entries also include minimal context fields (tool, repo type, language, failure mode) to improve later synthesis?
+- Areas needing clarification:
+  - None.
+- Improvements to your own workflow:
+  - Keep experience notes concise and dated; add context fields only when they materially help retrieval.
+
+## 2026-02-23 — Distill similar experiences from seed into experience log
+
+- What I did: Scanned [`SEED.md`](SEED.md) for experience-style observations similar to “bugfix plus hardening” and distilled them into additional entries in the experience log.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+- Decisions made (and why):
+  - Marked entries as “From seed context” to preserve provenance and avoid implying they came from external sources.
+  - Kept the new entries short and adjacent to the original bugfix-hardening entry to keep the log scannable.
+- Assumptions:
+  - Seed content reflects prior first-person experience and is acceptable to distill into the experience log as long as provenance is labeled.
+- Commands run (if any):
+  - `rg -n "bug|debug|fix|refactor|safe refactor|adds tests|harden|prevent|failure|risk|iterate|tests pass|tech debt|liquid|self-improving|document" SEED.md`
+  - `nl -ba SEED.md | sed -n '60,120p'`
+  - `nl -ba SEED.md | sed -n '240,340p'`
+- Test results (if relevant):
+  - N/A (docs-only changes).
+- Open questions / ambiguities:
+  - If the experience log grows, do you want a lightweight tag line per entry (e.g., `tags: bugfix, refactor, ci`) for later synthesis?
+
+## 2026-02-23 — Experience entry: offload context to disk (agent-written artifacts)
+
+- What I did: Captured a first-person experience note that agents work better when context is stored in repo files (specs/notes/decisions) that the agent can read and update, including using the agent to author those context files.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+- Decisions made (and why):
+  - Kept this as an experience entry (not synthesis) since it’s a direct workflow observation rather than a cross-source claim.
+- Assumptions:
+  - “Context offloading” refers to storing durable project constraints and decisions in files on disk rather than relying on chat-only memory.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A
