@@ -1,4 +1,4 @@
-# Plan: Research → Distill → Synthesize → Slide Deck
+# Plan: Research → Distill → Synthesize
 
 ## Objective
 
@@ -11,8 +11,10 @@ The goal is:
 - Identifying what actually works in practice
 - Showing what developers are missing if they ignore this shift
 
-This is not a hype deck.
+This is not a hype project.
 This is a field report grounded in real experimentation and real-world writing.
+
+Slides/presentations are a possible byproduct of the research, not the primary goal.
 
 ---
 
@@ -76,7 +78,7 @@ This synthesis should reference source files.
 
 # Phase 4 — Narrative Formation
 
-Build a clear narrative structure for a presentation:
+Build a clear narrative structure for communicating findings (writing, talks, slides, etc.):
 
 The tone should be:
 - Grounded
@@ -90,16 +92,16 @@ It should feel like:
 
 ---
 
-# Phase 5 — Slide Generation
+# Phase 5 — Derivative Artifacts (Optional)
 
-Once synthesis is stable:
+Once synthesis is stable, optionally:
 
-- Prepare a condensed version suitable for slide generation.
+- Prepare a condensed version suitable for a slide deck or other communication format.
 - Maintain clarity over volume.
 - Preserve nuance.
 - Avoid generic AI optimism.
 
-Slides will later be generated from this distilled repository.
+Slides can be generated later from this distilled repository.
 
 ---
 
@@ -122,4 +124,3 @@ A clean, evolving knowledge base that allows us to:
 - Teach other developers
 - Avoid hype
 - Avoid missing important shifts
-

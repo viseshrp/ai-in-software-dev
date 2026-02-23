@@ -27,3 +27,4 @@ Aim for a developer-facing structure:
 - What’s overhyped (unsupported claims)
 - What developers miss if they ignore this shift (consequences, skill gaps)
 
+This narrative can feed derivative artifacts (posts, talks, slide decks), but research/synthesis is the primary goal.

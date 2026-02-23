@@ -2,6 +2,8 @@
 
 A markdown-first, incrementally-built field report on how AI is changing software development (2023–2026).
 
+Primary goal: research, synthesis, and ecosystem understanding (separating signal from hype and capturing what works vs. what doesn’t). Slides/presentations are optional derivative artifacts.
+
 ## Workflow (high level)
 
 1. Capture an article into `articles/` as a structured summary (signal > fluff).
