@@ -180,3 +180,17 @@ This is a running log of work performed in this repository so future agents can 
   - N/A
 - Test results (if relevant):
   - N/A
+
+## 2026-02-24 — Experience entry: Codex for long-running refactors (typing migration example)
+
+- What I did: Captured a first-person comparative note that Codex performs better (for you) on long-running refactors/rewrites/implementations, with an example of attempting to add static types across an entire codebase (Copilot failed, Gemini degraded, Claude hit credits, Codex succeeded).
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+- Decisions made (and why):
+  - Kept it as an experience entry with a concrete example to preserve “what happened” rather than turning it into a generalized claim.
+- Assumptions:
+  - “Static types across an entire codebase” refers to a repo-wide migration (e.g., adding type annotations and fixing downstream errors) rather than a single-file change.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A

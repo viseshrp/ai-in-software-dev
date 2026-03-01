@@ -21,3 +21,9 @@ CI/CD and YAML/bash glue work becomes less of a blocker because agents can debug
 ## 2026-02-23 — Context Offloading To Disk Makes Agents Work Better
 
 Agents work best when important context is offloaded from their chat memory into files on disk (specs, constraints, decisions, checklists, notes). The agent can then read and update those files as part of the workflow, and you can even use the agent itself to write and maintain the context artifacts it needs to operate effectively.
+
+## 2026-02-24 — Codex Feels Best For Long-Running Refactors And Rewrites
+
+Codex seems far superior (in my experience) for long-running refactors/rewrites/implementations that require sustained coherence over time.
+
+One concrete example: I tried adding static types to an entire codebase. Copilot failed. Gemini became hacky and the approach deteriorated over time. Claude ran out of credits. Codex shined on this kind of long-running, repo-wide change.
