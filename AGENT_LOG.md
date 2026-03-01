@@ -89,6 +89,32 @@ This is a running log of work performed in this repository so future agents can 
 - Commands run:
   - `rg -n "/Users/|\\.md:1" -S .`
 
+## 2026-03-01 — Summarize external article: Mia Heidenstedt on writing quality code with AI
+
+- What I did: Read the article at `https://heidenstedt.org/posts/2026/how-to-effectively-write-quality-code-with-ai/?utm_source=hackernewsletter&utm_medium=email&utm_term=code`, created a new article summary, and captured the main workflow recommendations plus unsupported-but-important claims.
+- Files created/modified:
+  - Created: [`articles/2026/2026-02-06_how-to-effectively-write-quality-code-with-ai.md`](articles/2026/2026-02-06_how-to-effectively-write-quality-code-with-ai.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Kept the summary operational and concrete because the article is structured as 12 practical recommendations rather than a narrative essay.
+  - Put test-cheating, prompt-local context, and complexity-cost language into "Claims worth validating" because the article argues for them strongly without providing empirical evidence.
+  - Kept the notes section short and interpretive, limited to how the article maps to this repo's research themes.
+- Assumptions:
+  - Used the article's publication date (`2026-02-06`) from the page metadata and `2026-03-01` as the capture date.
+  - Preserved the user-provided URL, including UTM parameters, as the `source_url`.
+- Commands run (if any):
+  - `find articles -maxdepth 2 -type f | sort`
+  - `nl -ba docs/SUMMARY_GUIDE.md | sed -n '1,200p'`
+  - `nl -ba templates/article-summary.md | sed -n '1,200p'`
+  - `python3 scripts/new_article.py --title "How to effectively write quality code with AI" --url "https://heidenstedt.org/posts/2026/how-to-effectively-write-quality-code-with-ai/?utm_source=hackernewsletter&utm_medium=email&utm_term=code" --author "Mia Heidenstedt" --published 2026-02-06 --captured 2026-03-01`
+  - `nl -ba articles/2026/2026-02-06_how-to-effectively-write-quality-code-with-ai.md | sed -n '1,220p'`
+  - `python3 scripts/build_index.py`
+- Test results (if relevant):
+  - N/A (content addition only).
+- Open questions / ambiguities:
+  - For future article captures, do you want `source_url` normalized to the canonical URL without tracking parameters, or should we continue preserving the exact input URL for provenance?
+
 ## 2026-02-23 — Repo docs read + experience-capture operating mode
 
 - What I did: Read all markdown docs currently in-repo to establish operating context, then aligned on a standing workflow: you provide experience entries and I place them in the most appropriate repo location.
