@@ -34,6 +34,8 @@ I use my own `.md` plan files rather than Claude Code’s or Codex's built-in pl
 
 I can edit it in my editor, add inline notes, and it persists as a real artifact in the project.
 
+This is fundamentally different from trying to steer implementation through chat messages. The plan is a structured, complete specification I can review holistically. A chat conversation is something I’d have to scroll through to reconstruct decisions. The plan wins every time.
+
 ## 2026-03-02 — For Contained Features, Sharing A Reference Implementation Helps
 
 For well-contained features where I’ve already seen a good implementation in an open source repo, I’ll share that code as a reference alongside the plan request.

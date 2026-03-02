@@ -264,6 +264,24 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - None.
 
+## 2026-03-02 — Experience edit: why repo plans beat chat steering
+
+- What I did: Edited the existing “prefer repo markdown plans” experience entry to add a clarification: a plan file is a holistic, structured spec that’s easier to review than reconstructing decisions from a long chat scrollback.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Appended to the existing plan-mode entry (rather than creating a new standalone entry) because it’s a direct elaboration of the same preference and rationale.
+- Assumptions:
+  - “Steer implementation through chat messages” refers to incrementally guiding design/decisions via conversational context rather than a single durable spec artifact.
+- Commands run (if any):
+  - `rg -n "Prefer My Own Markdown Plans" -n docs/EXPERIENCE_LOG.md`
+  - `rg -n "prefer repo markdown plans" AGENT_LOG.md`
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
 ## 2026-03-02 — Experience entry: share OSS reference implementations for contained features
 
 - What I did: Added a first-person experience note that for well-contained features, sharing a known-good open source reference implementation alongside the plan request improves outcomes.
