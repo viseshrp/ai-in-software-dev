@@ -115,6 +115,27 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - For future article captures, do you want `source_url` normalized to the canonical URL without tracking parameters, or should we continue preserving the exact input URL for provenance?
 
+## 2026-03-01 — Summarize external article: Hellerstein on coding agents and distributed systems
+
+- What I did: Read the article at `https://jhellerstein.github.io/blog/codegen-reality/?utm_source=tldrnewsletter`, created a structured summary, and captured the central thesis about aiming AI code generation at languages/frameworks that make distributed contracts explicit and constrain nondeterminism.
+- Files created/modified:
+  - Created: [`articles/2026/2026-02-11_coding-agents-meet-distributed-reality.md`](articles/2026/2026-02-11_coding-agents-meet-distributed-reality.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Treated Hydro as an example rather than a conclusion; summarized the argument without endorsing Hydro’s claims beyond what the author states.
+  - Put “AI will write most code” and “eliminates whole classes of bugs” into “Claims worth validating” since this post argues them without presenting data.
+- Assumptions:
+  - Publication date taken from the post metadata (“February 11, 2026”) and recorded as `2026-02-11`.
+  - Preserved the user-provided URL (including UTM) as `source_url`.
+- Commands run (if any):
+  - `curl -L --silent --show-error --fail -o /tmp/codegen-reality.html "https://jhellerstein.github.io/blog/codegen-reality/?utm_source=tldrnewsletter"`
+  - `curl -L --show-error --fail "https://jhellerstein.github.io/blog/page-data/codegen-reality/page-data.json" -o /tmp/codegen-reality.page-data.json`
+  - `python3 scripts/new_article.py --title "Coding Agents Meet Distributed Reality" --url "https://jhellerstein.github.io/blog/codegen-reality/?utm_source=tldrnewsletter" --author "Joseph M. Hellerstein" --published 2026-02-11 --captured 2026-03-01`
+  - `python3 scripts/build_index.py`
+- Test results (if relevant):
+  - N/A (content addition only).
+
 ## 2026-02-23 — Repo docs read + experience-capture operating mode
 
 - What I did: Read all markdown docs currently in-repo to establish operating context, then aligned on a standing workflow: you provide experience entries and I place them in the most appropriate repo location.
