@@ -368,6 +368,40 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - None.
 
+## 2026-03-02 — Experience edit: phases + per-phase todo lists (often automatic)
+
+- What I did: Edited the plan-mode experience entry to add that you can ask the agent to split work into phases and generate both per-phase todo lists and a global todo list, and that it often does this automatically.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Added it before the “detailed todo list” paragraph to keep the experience flow: phase structure → todo lists → review gate → progress tracking.
+- Assumptions:
+  - “Usually does by itself” means the agent tends to naturally propose phased work breakdowns without being explicitly prompted, especially for larger tasks.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
+## 2026-03-02 — Experience edit: run lint/tests after each phase
+
+- What I did: Edited the “phase-by-phase review vs run-to-completion” experience entry to add that you can ask the agent to run the full lint/test suite after each phase.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Appended to the same phase-by-phase entry because it’s a concrete operationalization of “phase boundaries” (validation gates).
+- Assumptions:
+  - “Entire lint/test suite” means whatever the repo’s standard validation commands are (formatter/linter/unit tests/integration tests as applicable).
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
 ## 2026-03-02 — Experience entry: share OSS reference implementations for contained features
 
 - What I did: Added a first-person experience note that for well-contained features, sharing a known-good open source reference implementation alongside the plan request improves outcomes.

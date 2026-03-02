@@ -38,6 +38,8 @@ This is fundamentally different from trying to steer implementation through chat
 
 Copilot is excellent at understanding code, proposing solutions, and writing implementations. But it doesn’t know my product priorities, my users’ pain points, or the engineering trade-offs I’m willing to make. The annotation cycle is how I inject that judgement.
 
+You can ask it to split work into phases and then make a todo list for each phase, plus a global todo list as well. It usually does this by itself.
+
 I also add a detailed todo list to the plan, with all the phases and individual tasks necessary to complete the plan — don’t implement yet.
 
 This creates a checklist that serves as a progress tracker during implementation. Claude marks items as completed as it goes, so I can glance at the plan at any point and see exactly where things stand. Especially valuable in sessions that run for hours.
@@ -53,3 +55,5 @@ Claude works dramatically better when it has a concrete reference implementation
 When done with planning, you can either ask it to stop after a phase and let yourself review, or ask it to not stop until all tasks and phases are completed.
 
 The former makes a PR review easier.
+
+You can also ask it to run the entire lint/test suite after every phase.
