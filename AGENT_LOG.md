@@ -333,6 +333,24 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - None.
 
+## 2026-03-02 — Experience entry: choose phase-by-phase review vs run-to-completion
+
+- What I did: Added a first-person experience note that after planning, I can explicitly choose whether the agent should stop after each phase for review or continue through all phases/tasks without stopping.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Captured as a new experience entry because it’s a distinct workflow control pattern (execution pacing) separate from “plan as spec” and “checklist tracking”.
+- Assumptions:
+  - “Stop after a phase” means pausing implementation at a defined milestone for human review/approval before continuing.
+  - “Do not stop until all tasks and phases are completed” means the agent continues iterating until the full checklist is done (within practical time/tooling limits).
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
 ## 2026-03-02 — Experience entry: share OSS reference implementations for contained features
 
 - What I did: Added a first-person experience note that for well-contained features, sharing a known-good open source reference implementation alongside the plan request improves outcomes.
