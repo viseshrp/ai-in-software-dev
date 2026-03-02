@@ -51,3 +51,5 @@ Claude works dramatically better when it has a concrete reference implementation
 ## 2026-03-02 — After Planning, Choose Whether The Agent Stops Per Phase Or Runs To Completion
 
 When done with planning, you can either ask it to stop after a phase and let yourself review, or ask it to not stop until all tasks and phases are completed.
+
+The former makes a PR review easier.
