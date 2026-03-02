@@ -61,6 +61,8 @@ Frontend work is the most iterative part. I test in the browser and fire off rap
 
 For visual issues, I sometimes attach screenshots. A screenshot of a misaligned table communicates the problem faster than describing it.
 
+If there are UI changes, sometimes I give it instructions to start up the app and ask it to take screenshots and see for itself what the problem is with the UI, which can be hard to explain.
+
 I also reference existing code constantly:
 
 “this table should look exactly like the users table, same header, same pagination, same row density.”

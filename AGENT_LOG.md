@@ -136,6 +136,26 @@ This is a running log of work performed in this repository so future agents can 
 - Test results (if relevant):
   - N/A (content addition only).
 
+## 2026-03-01 — Summarize external article: Boris Tane on using Claude Code
+
+- What I did: Read the article at `https://boristane.com/blog/how-i-use-claude-code/?utm_source=tldrnewsletter`, created a structured summary of the research-plan-annotate-implement workflow, and captured the key control mechanisms (written artifacts, plan gating, scope cuts, revert-and-rescope).
+- Files created/modified:
+  - Created: [`articles/2026/2026-02-10_how-i-use-claude-code.md`](articles/2026/2026-02-10_how-i-use-claude-code.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Treated token savings and “single long sessions don’t degrade” as claims worth validating, since the article presents them as experience-based.
+  - Focused the “what works” section on the mechanics (artifacts, gating, reference-based feedback, revert behavior) rather than the specific prompt wording.
+- Assumptions:
+  - Publication date taken from JSON-LD `datePublished` (`2026-02-10T08:00:00.000Z`) and recorded as `2026-02-10`.
+  - Preserved the user-provided URL (including UTM) as `source_url`.
+- Commands run (if any):
+  - `curl -L --show-error --fail "https://boristane.com/blog/how-i-use-claude-code/?utm_source=tldrnewsletter" -o /tmp/how-i-use-claude-code.html`
+  - `python3 scripts/new_article.py --title "How I Use Claude Code" --url "https://boristane.com/blog/how-i-use-claude-code/?utm_source=tldrnewsletter" --author "Boris Tane" --published 2026-02-10 --captured 2026-03-01`
+  - `python3 scripts/build_index.py`
+- Test results (if relevant):
+  - N/A (content addition only).
+
 ## 2026-02-23 — Repo docs read + experience-capture operating mode
 
 - What I did: Read all markdown docs currently in-repo to establish operating context, then aligned on a standing workflow: you provide experience entries and I place them in the most appropriate repo location.
@@ -416,6 +436,28 @@ This is a running log of work performed in this repository so future agents can 
   - “Reference existing code constantly” includes pointing to canonical components/pages as UI/behavior baselines.
 - Commands run (if any):
   - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
+## 2026-03-02 — Experience edit: ask agent to run app and screenshot UI issues
+
+- What I did: Edited the plan-mode experience entry to add that for UI changes, I sometimes instruct the agent to start the app and take screenshots to observe UI problems directly when they’re hard to describe.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Appended near the existing screenshot paragraph to keep UI-iteration notes grouped together.
+- Assumptions:
+  - “Start up the app” means running the local dev server and navigating relevant screens (as feasible within tooling/session constraints).
+  - “Take screenshots” can include automated screenshot tooling or manual capture provided back to the agent, depending on environment.
+- Commands run (if any):
+  - `git status --porcelain`
+  - `git diff --stat`
+  - `git diff -- INDEX.md`
+  - `ls -l articles/2026/2026-02-10_how-i-use-claude-code.md`
+  - `sed -n '1,80p' articles/2026/2026-02-10_how-i-use-claude-code.md`
 - Test results (if relevant):
   - N/A (docs-only change).
 - Open questions / ambiguities:
