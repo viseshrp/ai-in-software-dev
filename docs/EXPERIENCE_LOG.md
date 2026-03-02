@@ -38,6 +38,8 @@ This is fundamentally different from trying to steer implementation through chat
 
 Copilot is excellent at understanding code, proposing solutions, and writing implementations. But it doesn’t know my product priorities, my users’ pain points, or the engineering trade-offs I’m willing to make. The annotation cycle is how I inject that judgement.
 
+The creative work happened in the annotation cycles in plan mode. That’s where humans use our brains. By the time I say “implement it all,” every decision has been made and validated. The implementation becomes mechanical, not creative. This is deliberate.
+
 You can ask it to split work into phases and then make a todo list for each phase, plus a global todo list as well. It usually does this by itself.
 
 I also add a detailed todo list to the plan, with all the phases and individual tasks necessary to complete the plan — don’t implement yet.

@@ -385,6 +385,23 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - None.
 
+## 2026-03-02 — Experience edit: creativity in annotation; implementation is mechanical
+
+- What I did: Edited the plan-mode experience entry to add that the creative work happens in the annotation cycles (human judgement/decision-making), and that by the time I say “implement it all,” decisions are validated and implementation is intentionally mechanical.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Placed the note adjacent to the “annotation cycle” paragraph to preserve the causal link: annotations drive decisions; implementation executes them.
+- Assumptions:
+  - “Plan mode” here refers to the plan/spec + annotation loop, not a specific product feature requirement.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
 ## 2026-03-02 — Experience edit: run lint/tests after each phase
 
 - What I did: Edited the “phase-by-phase review vs run-to-completion” experience entry to add that you can ask the agent to run the full lint/test suite after each phase.
