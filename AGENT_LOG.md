@@ -241,3 +241,42 @@ This is a running log of work performed in this repository so future agents can 
   - N/A
 - Test results (if relevant):
   - N/A
+
+## 2026-03-02 — Experience entry: prefer repo markdown plans over built-in plan mode
+
+- What I did: Added a first-person experience note that I prefer maintaining my own Markdown planning files in-repo rather than using Claude Code/Codex built-in plan mode.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+- Decisions made (and why):
+  - Captured it as an experience entry (not synthesis) because it’s a personal workflow preference rather than a multi-source claim.
+  - Kept the wording direct to preserve the original sentiment and rationale (editor control, inline notes, durable artifact).
+- Assumptions:
+  - “Built-in plan mode” refers to tool-specific UI planning features, distinct from keeping a persistent `.md` file in the repo.
+- Commands run (if any):
+  - `ls`
+  - `rg -n "experience log" -S .`
+  - `rg -n "EXPERIENCE" -S .`
+  - `find docs -maxdepth 2 -name AGENTS.md -print`
+  - `sed -n '1,200p' docs/EXPERIENCE_LOG.md`
+  - `tail -n 80 AGENT_LOG.md`
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
+## 2026-03-02 — Experience entry: share OSS reference implementations for contained features
+
+- What I did: Added a first-person experience note that for well-contained features, sharing a known-good open source reference implementation alongside the plan request improves outcomes.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+- Decisions made (and why):
+  - Captured it as an experience entry (not synthesis) because it’s a workflow tactic you apply when you already have a trusted reference.
+  - Kept it narrowly scoped to “well-contained features” to avoid implying it’s always the best approach for ambiguous, exploratory work.
+- Assumptions:
+  - “Share that code” means linking or providing relevant excerpts as a reference (respecting licensing/attribution), not copying entire repos verbatim.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.

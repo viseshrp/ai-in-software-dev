@@ -27,3 +27,13 @@ Agents work best when important context is offloaded from their chat memory into
 Codex seems far superior (in my experience) for long-running refactors/rewrites/implementations that require sustained coherence over time.
 
 One concrete example: I tried adding static types to an entire codebase. Copilot failed. Gemini became hacky and the approach deteriorated over time. Claude ran out of credits. Codex shined on this kind of long-running, repo-wide change.
+
+## 2026-03-02 — I Prefer My Own Markdown Plans Over Built-In Plan Mode
+
+I use my own `.md` plan files rather than Claude Code’s or Codex's built-in plan mode. The built-in plan mode sucks. My markdown file gives me full control.
+
+I can edit it in my editor, add inline notes, and it persists as a real artifact in the project.
+
+## 2026-03-02 — For Contained Features, Sharing A Reference Implementation Helps
+
+For well-contained features where I’ve already seen a good implementation in an open source repo, I’ll share that code as a reference alongside the plan request.
