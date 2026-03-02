@@ -40,6 +40,8 @@ Copilot is excellent at understanding code, proposing solutions, and writing imp
 
 I also add a detailed todo list to the plan, with all the phases and individual tasks necessary to complete the plan — don’t implement yet.
 
+This creates a checklist that serves as a progress tracker during implementation. Claude marks items as completed as it goes, so I can glance at the plan at any point and see exactly where things stand. Especially valuable in sessions that run for hours.
+
 ## 2026-03-02 — For Contained Features, Sharing A Reference Implementation Helps
 
 For well-contained features where I’ve already seen a good implementation in an open source repo, I’ll share that code as a reference alongside the plan request.

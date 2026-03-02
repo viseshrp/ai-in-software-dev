@@ -316,6 +316,23 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - None.
 
+## 2026-03-02 — Experience edit: checklist plan as progress tracker
+
+- What I did: Edited the plan-mode experience entry to add that the detailed todo list becomes a checklist/progress tracker during long implementation sessions, with Claude marking items complete as it goes.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Appended to the same plan-mode entry because it’s a direct benefit of the phased todo list pattern (visibility into progress during hours-long sessions).
+- Assumptions:
+  - “Claude marks items as completed” means the agent updates the Markdown checklist/plan file as part of the workflow.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
 ## 2026-03-02 — Experience entry: share OSS reference implementations for contained features
 
 - What I did: Added a first-person experience note that for well-contained features, sharing a known-good open source reference implementation alongside the plan request improves outcomes.
