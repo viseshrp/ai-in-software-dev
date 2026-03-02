@@ -299,6 +299,23 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - None.
 
+## 2026-03-02 — Experience edit: add phased todo list; defer implementation
+
+- What I did: Edited the plan-mode experience entry to add a workflow pattern: I include a detailed, phased todo list with individual tasks, and explicitly defer implementation until after the plan is reviewed.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Appended to the same plan-mode entry because it’s part of the “plan as spec + review gate” workflow, not a separate theme.
+- Assumptions:
+  - “Don’t implement yet” is an explicit gating instruction to prevent premature coding before priorities/trade-offs are annotated.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
 ## 2026-03-02 — Experience entry: share OSS reference implementations for contained features
 
 - What I did: Added a first-person experience note that for well-contained features, sharing a known-good open source reference implementation alongside the plan request improves outcomes.

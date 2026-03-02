@@ -38,6 +38,8 @@ This is fundamentally different from trying to steer implementation through chat
 
 Copilot is excellent at understanding code, proposing solutions, and writing implementations. But it doesn’t know my product priorities, my users’ pain points, or the engineering trade-offs I’m willing to make. The annotation cycle is how I inject that judgement.
 
+I also add a detailed todo list to the plan, with all the phases and individual tasks necessary to complete the plan — don’t implement yet.
+
 ## 2026-03-02 — For Contained Features, Sharing A Reference Implementation Helps
 
 For well-contained features where I’ve already seen a good implementation in an open source repo, I’ll share that code as a reference alongside the plan request.
