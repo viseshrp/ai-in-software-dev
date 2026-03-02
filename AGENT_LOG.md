@@ -280,3 +280,20 @@ This is a running log of work performed in this repository so future agents can 
   - N/A (docs-only change).
 - Open questions / ambiguities:
   - None.
+
+## 2026-03-02 — Experience edit: Claude benefits from concrete reference implementations
+
+- What I did: Edited the existing “share OSS reference implementations” experience entry to add an explicit observation that Claude works dramatically better when given a concrete reference implementation rather than designing from scratch.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Appended the Claude-specific note to the existing entry (instead of creating a new dated entry) because it’s a direct elaboration of the same workflow pattern.
+- Assumptions:
+  - “Concrete reference implementation” means code that is close enough in shape/constraints to be directly adapted, not a high-level description.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.

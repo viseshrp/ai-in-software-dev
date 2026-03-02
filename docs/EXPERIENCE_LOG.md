@@ -37,3 +37,5 @@ I can edit it in my editor, add inline notes, and it persists as a real artifact
 ## 2026-03-02 — For Contained Features, Sharing A Reference Implementation Helps
 
 For well-contained features where I’ve already seen a good implementation in an open source repo, I’ll share that code as a reference alongside the plan request.
+
+Claude works dramatically better when it has a concrete reference implementation to work from rather than designing from scratch.
