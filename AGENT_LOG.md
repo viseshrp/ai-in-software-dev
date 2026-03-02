@@ -402,6 +402,25 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - None.
 
+## 2026-03-02 — Experience edit: terse implementation corrections and high-iteration frontend loops
+
+- What I did: Edited the plan-mode experience entry to add that implementation feedback is often terse (single-sentence corrections) because Claude retains the plan + session context, and that frontend work tends to be highly iterative with rapid visual corrections and occasional screenshots.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Added it to the same plan-mode entry because it describes the downstream execution loop (plan-driven implementation + corrections), not a separate theme.
+  - Preserved the short quoted examples to keep the “terse correction” pattern concrete.
+- Assumptions:
+  - “Attach screenshots” refers to providing images to communicate UI/layout issues faster than prose.
+  - “Reference existing code constantly” includes pointing to canonical components/pages as UI/behavior baselines.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
 ## 2026-03-02 — Experience edit: run lint/tests after each phase
 
 - What I did: Edited the “phase-by-phase review vs run-to-completion” experience entry to add that you can ask the agent to run the full lint/test suite after each phase.

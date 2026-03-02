@@ -46,6 +46,25 @@ I also add a detailed todo list to the plan, with all the phases and individual 
 
 This creates a checklist that serves as a progress tracker during implementation. Claude marks items as completed as it goes, so I can glance at the plan at any point and see exactly where things stand. Especially valuable in sessions that run for hours.
 
+Where a planning note might be a paragraph, an implementation correction is often a single sentence:
+
+“You didn’t implement the `deduplicateByTitle` function.”
+“You built the settings page in the main app when it should be in the admin app, move it.”
+
+Claude has the full context of the plan and the ongoing session, so terse corrections are enough.
+
+Frontend work is the most iterative part. I test in the browser and fire off rapid corrections:
+
+“wider”
+“still cropped”
+“there’s a 2px gap”
+
+For visual issues, I sometimes attach screenshots. A screenshot of a misaligned table communicates the problem faster than describing it.
+
+I also reference existing code constantly:
+
+“this table should look exactly like the users table, same header, same pagination, same row density.”
+
 ## 2026-03-02 — For Contained Features, Sharing A Reference Implementation Helps
 
 For well-contained features where I’ve already seen a good implementation in an open source repo, I’ll share that code as a reference alongside the plan request.
