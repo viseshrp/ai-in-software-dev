@@ -36,6 +36,8 @@ I can edit it in my editor, add inline notes, and it persists as a real artifact
 
 This is fundamentally different from trying to steer implementation through chat messages. The plan is a structured, complete specification I can review holistically. A chat conversation is something I’d have to scroll through to reconstruct decisions. The plan wins every time.
 
+Copilot is excellent at understanding code, proposing solutions, and writing implementations. But it doesn’t know my product priorities, my users’ pain points, or the engineering trade-offs I’m willing to make. The annotation cycle is how I inject that judgement.
+
 ## 2026-03-02 — For Contained Features, Sharing A Reference Implementation Helps
 
 For well-contained features where I’ve already seen a good implementation in an open source repo, I’ll share that code as a reference alongside the plan request.

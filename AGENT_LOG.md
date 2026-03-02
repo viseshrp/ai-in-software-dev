@@ -282,6 +282,23 @@ This is a running log of work performed in this repository so future agents can 
 - Open questions / ambiguities:
   - None.
 
+## 2026-03-02 — Experience edit: annotation cycle injects product judgement
+
+- What I did: Edited the existing plan-mode experience entry to add a note about why a plan + annotation cycle matters: Copilot can write solid code, but the human uses annotations to inject product priorities, user pain points, and acceptable engineering trade-offs.
+- Files created/modified:
+  - Modified: [`docs/EXPERIENCE_LOG.md`](docs/EXPERIENCE_LOG.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+- Decisions made (and why):
+  - Appended to the same plan-mode entry because it reinforces the “plan as spec” theme by explaining how judgement enters the loop.
+- Assumptions:
+  - “Annotation cycle” refers to reviewing/editing the plan/spec (and/or PR feedback) to communicate non-obvious priorities and constraints back to the agent/tool.
+- Commands run (if any):
+  - N/A
+- Test results (if relevant):
+  - N/A (docs-only change).
+- Open questions / ambiguities:
+  - None.
+
 ## 2026-03-02 — Experience entry: share OSS reference implementations for contained features
 
 - What I did: Added a first-person experience note that for well-contained features, sharing a known-good open source reference implementation alongside the plan request improves outcomes.
