@@ -581,3 +581,58 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-12 — Summarize external article: Kyle Corbitt on preparing for AI disruption
+
+- What I did: Read the article at `https://corbt.com/posts/a-pocket-guide-to-surviving-the-robot-apocalypse`, created a new article summary, and extracted the elements most relevant to this repo: direct frontier-model capability calibration, implications for developer career resilience, and the broader framing of software automation as part of a larger knowledge-work shift.
+- Files created/modified:
+  - Created: [`articles/2026/2026-02-16_a-pocket-guide-to-surviving-the-robot-apocalypse.md`](articles/2026/2026-02-16_a-pocket-guide-to-surviving-the-robot-apocalypse.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Structured the summary around the author’s `learn / earn / return` framework because that is the article’s organizing idea.
+  - Kept the notes section explicit that this is more of a career/adaptation essay than a development-workflow article, while still connecting it to this repo’s themes.
+  - Flagged the health, taxes, and investing examples as risky/high-stakes use cases rather than treating them as straightforward best practices.
+- Assumptions:
+  - Publication date taken from the page (`February 16, 2026`) and recorded as `2026-02-16`.
+  - Used the canonical page URL as `source_url`.
+- Commands run (if any):
+  - `curl -L --show-error --fail "https://corbt.com/posts/a-pocket-guide-to-surviving-the-robot-apocalypse" -o /tmp/robot-apocalypse.html`
+  - `git status --short`
+  - `tail -n 60 AGENT_LOG.md`
+  - `rg -n "title|author|published|date|og:|description|ld\\+json|application/ld\\+json|article:published_time|byline|time datetime" /tmp/robot-apocalypse.html`
+  - `sed -n '1,320p' /tmp/robot-apocalypse.html`
+  - `python3 scripts/new_article.py --title "A Pocket Guide to Surviving the Robot Apocalypse" --url "https://corbt.com/posts/a-pocket-guide-to-surviving-the-robot-apocalypse" --author "Kyle Corbitt" --published 2026-02-16 --captured 2026-03-12`
+  - `python3 scripts/build_index.py`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
+
+## 2026-03-12 — Summarize external article: Laurie Voss on AI-enabled companies and headcount
+
+- What I did: Read the article at `https://seldo.com/posts/do-ai-enabled-companies-need-fewer-people/?utm_source=tldrai`, created a new article summary, and captured the core argument that startups, especially AI-native ones, appear to be scaling with fewer people while the expected offsetting wave of new tech jobs has not yet arrived.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-08_do-ai-enabled-companies-need-fewer-people.md`](articles/2026/2026-03-08_do-ai-enabled-companies-need-fewer-people.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Kept the summary focused on the post’s company- and market-level implications rather than reproducing every funding statistic, because the durable signal for this repo is the labor-vs-compute substitution argument.
+  - Treated the cited metrics (40% smaller teams, 6x revenue per employee, smaller teams at $10M ARR) as “Claims worth validating” because the article relies on third-party source synthesis.
+  - Connected the notes explicitly to adjacent repo themes: org design, hiring compression, and whether AI creates new demand fast enough to offset efficiency gains.
+- Assumptions:
+  - Publication date taken from the page (`March 8, 2026`) and recorded as `2026-03-08`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `curl -L --show-error --fail "https://seldo.com/posts/do-ai-enabled-companies-need-fewer-people/?utm_source=tldrai" -o /tmp/seldo-ai-fewer-people.html`
+  - `git status --short`
+  - `tail -n 60 AGENT_LOG.md`
+  - `rg -n "title|author|published|date|og:|description|ld\\+json|application/ld\\+json|article:published_time|byline|time datetime|class=author|rel=author" /tmp/seldo-ai-fewer-people.html`
+  - `sed -n '1,360p' /tmp/seldo-ai-fewer-people.html`
+  - `python3 scripts/new_article.py --title "Do AI-enabled companies need fewer people?" --url "https://seldo.com/posts/do-ai-enabled-companies-need-fewer-people/?utm_source=tldrai" --author "Laurie Voss" --published 2026-03-08 --captured 2026-03-12`
+  - `python3 scripts/build_index.py`
+  - `python3 -c "import os; p='scripts/__pycache__/build_index.cpython-314.pyc'; os.remove(p) if os.path.exists(p) else None"`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
