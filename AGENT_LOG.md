@@ -721,3 +721,31 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-12 — Summarize external article: William J. Bowman on when generative models are useful
+
+- What I did: Read the article at `https://www.williamjbowman.com/blog/2026/03/05/against-vibes-when-is-a-generative-model-useful/?utm_source=tldrdev`, created a new article summary, and captured the post’s main contribution: a three-part framework for evaluating generative-model usefulness in terms of encoding cost, verification cost, and process dependence.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-05_against-vibes-when-is-a-generative-model-useful.md`](articles/2026/2026-03-05_against-vibes-when-is-a-generative-model-useful.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Preserved the author’s three-factor model because it is the article’s central contribution and the part most reusable for this repo.
+  - Treated the post as an evaluative framework rather than a general anti-AI rant, even though the tone is skeptical, because the useful signal here is the decision model.
+  - Flagged claims about objective productivity studies and rising verification cost as items worth validating because the article argues them conceptually rather than demonstrating them in detail.
+- Assumptions:
+  - Publication date taken from the page (`2026-03-05`) and recorded as `2026-03-05`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `curl -L --show-error --fail "https://www.williamjbowman.com/blog/2026/03/05/against-vibes-when-is-a-generative-model-useful/?utm_source=tldrdev" -o /tmp/against-vibes.html`
+  - `tail -n 40 AGENT_LOG.md`
+  - `rg -n "title|author|published|date|og:|description|ld\\+json|application/ld\\+json|article:published_time|byline|time datetime|<h1|William|Bowman|vibes|generative model" /tmp/against-vibes.html`
+  - `sed -n '1,360p' /tmp/against-vibes.html`
+  - `python3 scripts/new_article.py --title "Against Vibes: When is a Generative Model Useful" --url "https://www.williamjbowman.com/blog/2026/03/05/against-vibes-when-is-a-generative-model-useful/?utm_source=tldrdev" --author "William J. Bowman" --published 2026-03-05 --captured 2026-03-12`
+  - `python3 scripts/build_index.py`
+  - `python3 -c "import os; p='scripts/__pycache__/build_index.cpython-314.pyc'; os.remove(p) if os.path.exists(p) else None"`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
