@@ -636,3 +636,32 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-12 — Summarize external article: Addie Foote on open weights versus open training
+
+- What I did: Read the article at `https://www.workshoplabs.ai/blog/open-weights-open-training?utm_source=tldrai`, created a new article summary, and captured the core argument that open model weights do not automatically imply workable, affordable post-training infrastructure.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-09_open-weights-isn-t-open-training.md`](articles/2026/2026-03-09_open-weights-isn-t-open-training.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Focused the summary on the article’s main distinction between open weights and open training, rather than enumerating every debugging step in equal detail.
+  - Kept the concrete failure modes in the summary because they are the evidence underlying the article’s broader claim about infrastructure debt.
+  - Treated cost comparisons and broader generalizations about open-source ML infrastructure as “Claims worth validating” because they come from one detailed case study.
+- Assumptions:
+  - Publication date taken from the page (`March 9, 2026`) and recorded as `2026-03-09`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `git diff -- AGENT_LOG.md INDEX.md`
+  - `curl -L --show-error --fail "https://www.workshoplabs.ai/blog/open-weights-open-training?utm_source=tldrai" -o /tmp/open-weights-open-training.html`
+  - `rg -n "title|author|published|date|og:|description|ld\\+json|application/ld\\+json|article:published_time|byline|time datetime|<h1|<article|Workshop Labs|open weights|open training" /tmp/open-weights-open-training.html`
+  - `sed -n '1,360p' /tmp/open-weights-open-training.html`
+  - `python3 - <<'PY' ... text.find(...) ... PY`
+  - `python3 scripts/new_article.py --title "Open Weights isn't Open Training" --url "https://www.workshoplabs.ai/blog/open-weights-open-training?utm_source=tldrai" --author "Addie Foote" --published 2026-03-09 --captured 2026-03-12`
+  - `python3 scripts/build_index.py`
+  - `python3 -c "import os; p='scripts/__pycache__/build_index.cpython-314.pyc'; os.remove(p) if os.path.exists(p) else None"`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
