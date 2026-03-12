@@ -693,3 +693,31 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-12 — Summarize external article: Vivek Trivedy on agent harnesses
+
+- What I did: Read the article at `https://blog.langchain.com/the-anatomy-of-an-agent-harness/?utm_source=tldrai`, created a new article summary, and captured its main contribution: a system-level definition of an agent as `model + harness`, plus a derivation of the main harness primitives needed for useful autonomous work.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-10_the-anatomy-of-an-agent-harness.md`](articles/2026/2026-03-10_the-anatomy-of-an-agent-harness.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Used `Vivek Trivedy` as the author because the body explicitly says “By Vivek Trivedy” even though site metadata is attributed to `LangChain Accounts`.
+  - Kept the summary organized around the article’s derived harness primitives rather than following the page section-by-section verbatim.
+  - Treated leaderboard/performance comparisons as “Claims worth validating” because the post references external evidence rather than reproducing it in full.
+- Assumptions:
+  - Publication date taken from page metadata (`2026-03-10` in the rendered page and `2026-03-11T02:41:22.000Z` in OG metadata) and recorded as `2026-03-10` to match the page’s displayed date.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `curl -L --show-error --fail "https://blog.langchain.com/the-anatomy-of-an-agent-harness/?utm_source=tldrai" -o /tmp/langchain-agent-harness.html`
+  - `tail -n 40 AGENT_LOG.md`
+  - `rg -n "title|author|published|date|og:|description|ld\\+json|application/ld\\+json|article:published_time|byline|time datetime|harness|LangChain|<h1" /tmp/langchain-agent-harness.html`
+  - `sed -n '1,360p' /tmp/langchain-agent-harness.html`
+  - `python3 scripts/new_article.py --title "The Anatomy of an Agent Harness" --url "https://blog.langchain.com/the-anatomy-of-an-agent-harness/?utm_source=tldrai" --author "Vivek Trivedy" --published 2026-03-10 --captured 2026-03-12`
+  - `python3 scripts/build_index.py`
+  - `python3 -c "import os; p='scripts/__pycache__/build_index.cpython-314.pyc'; os.remove(p) if os.path.exists(p) else None"`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
