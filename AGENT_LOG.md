@@ -513,3 +513,71 @@ This is a running log of work performed in this repository so future agents can 
   - N/A (docs-only change).
 - Open questions / ambiguities:
   - None.
+
+## 2026-03-10 — Summarize external article: lr0 on avoiding LLMs for research
+
+- What I did: Read the blog post at `https://lr0.org/blog/p/gpt/?utm_source=tldrdev`, created a new article summary, and captured the post’s main argument that LLM-assisted information retrieval can erode the judgment-building value of doing research yourself.
+- Files created/modified:
+  - Created: [`articles/2026/2026-01-30_i-m-not-consulting-an-llm.md`](articles/2026/2026-01-30_i-m-not-consulting-an-llm.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Used `lr0` as the author field because the article page exposes no fuller personal byline and the site consistently identifies itself that way.
+  - Kept the summary focused on epistemic and intellectual-development claims rather than trying to force a software-engineering workflow angle onto a broader essay.
+  - Put the strongest assertions about LLM inadequacy and “intellect-rot” into “Claims worth validating” because the post is argumentative and experience-based rather than empirical.
+- Assumptions:
+  - Publication date taken from the page markup (`January 30, 2026`) and recorded as `2026-01-30`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `pwd && rg --files`
+  - `sed -n '1,220p' AGENTS.md`
+  - `sed -n '1,220p' docs/SUMMARY_GUIDE.md`
+  - `sed -n '1,220p' CONTRIBUTING.md`
+  - `sed -n '1,220p' INDEX.md`
+  - `sed -n '1,220p' AGENT_LOG.md`
+  - `curl -L --show-error --fail "https://lr0.org/blog/p/gpt/?utm_source=tldrdev" -o /tmp/lr0-gpt.html`
+  - `sed -n '1,220p' /tmp/lr0-gpt.html`
+  - `rg -n "author|published|date|og:|description|ld\\+json|<article|<main|<time|substack|title" /tmp/lr0-gpt.html`
+  - `sed -n '1,220p' templates/article-summary.md`
+  - `sed -n '1,220p' articles/2026/2026-02-10_how-i-use-claude-code.md`
+  - `sed -n '1,220p' scripts/new_article.py`
+  - `curl -L --show-error --fail "https://lr0.org/blog/h/rss/" -o /tmp/lr0-rss.xml`
+  - `sed -n '1,220p' /tmp/lr0-rss.xml`
+  - `curl -L --show-error --fail "https://lr0.org/" -o /tmp/lr0-home.html`
+  - `rg -n "author|about|github|larrasket|lr0|La Vita Nouva" /tmp/lr0-home.html`
+  - `python3 scripts/new_article.py --title "I'm not consulting an LLM" --url "https://lr0.org/blog/p/gpt/?utm_source=tldrdev" --author "lr0" --published 2026-01-30 --captured 2026-03-10`
+  - `python3 scripts/build_index.py`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
+
+## 2026-03-12 — Summarize external article: Justin Jackson on Claude Code and team dynamics
+
+- What I did: Read the article at `https://justinjackson.ca/claude-code-ruin?utm_source=tldrdev`, created a new article summary, and extracted the parts most relevant to this repo: role-boundary erosion, the shift toward judgment/accountability, generalist-vs-specialist hiring effects, and AI-mediated cross-functional collaboration.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-04_will-claude-code-ruin-our-team.md`](articles/2026/2026-03-04_will-claude-code-ruin-our-team.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Kept the summary centered on organizational and workflow implications rather than repeating every named example, because the post’s core value for this repo is its argument about team structure under AI.
+  - Captured the Matt Stauffer example in “What seems to work” because it is the clearest concrete collaboration pattern in the article.
+  - Put “generalists win” and similar forward-looking conclusions into “Claims worth validating” because the article relies on anecdotal input from founders/operators.
+- Assumptions:
+  - Publication date taken from the page (`Published on March 4th, 2026`) and recorded as `2026-03-04`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `sed -n '1,220p' templates/article-summary.md`
+  - `tail -n 80 AGENT_LOG.md`
+  - `git status --short`
+  - `curl -L --show-error --fail "https://justinjackson.ca/claude-code-ruin?utm_source=tldrdev" -o /tmp/claude-code-ruin.html`
+  - `ls /tmp | rg "claude-code-ruin|justin|jackson"`
+  - `python3 - <<'PY' ... Path('/tmp').glob('*claude*') ... PY`
+  - `rg -n "title|author|published|date|og:|description|ld\\+json|application/ld\\+json|article:published_time|byline" /tmp/claude-code-ruin.html`
+  - `sed -n '1,260p' /tmp/claude-code-ruin.html`
+  - `python3 scripts/new_article.py --title "Will Claude Code ruin our team?" --url "https://justinjackson.ca/claude-code-ruin?utm_source=tldrdev" --author "Justin Jackson" --published 2026-03-04 --captured 2026-03-12`
+  - `python3 scripts/build_index.py`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
