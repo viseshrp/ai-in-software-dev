@@ -665,3 +665,31 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-12 — Summarize external article: Bassim Eledath on levels of agentic engineering
+
+- What I did: Read the article at `https://www.bassimeledath.com/blog/levels-of-agentic-engineering?utm_source=tldrdev`, created a new article summary, and captured the post as a staged maturity model for AI-assisted software work, from tab complete through background agents and autonomous multi-agent teams.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-10_the-8-levels-of-agentic-engineering.md`](articles/2026/2026-03-10_the-8-levels-of-agentic-engineering.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Preserved the “levels” structure in the summary because it is the article’s main contribution and a potentially useful synthesis lens for this repo.
+  - Focused the “what seems to work” section on operational patterns that recur across levels: codified context, shared skills, automated feedback, orchestration, and reviewer/implementer separation.
+  - Treated the more forward-looking claims about plan mode fading and code review being replaced as “Claims worth validating” because the article argues from experience and examples rather than benchmarks.
+- Assumptions:
+  - Publication date taken from the page (`March 10, 2026`) and recorded as `2026-03-10`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `curl -L --show-error --fail "https://www.bassimeledath.com/blog/levels-of-agentic-engineering?utm_source=tldrdev" -o /tmp/levels-of-agentic-engineering.html`
+  - `tail -n 40 AGENT_LOG.md`
+  - `rg -n "title|author|published|date|og:|description|ld\\+json|application/ld\\+json|article:published_time|byline|time datetime|<h1|Agentic|Bassim|levels" /tmp/levels-of-agentic-engineering.html`
+  - `sed -n '1,360p' /tmp/levels-of-agentic-engineering.html`
+  - `python3 scripts/new_article.py --title "The 8 Levels of Agentic Engineering" --url "https://www.bassimeledath.com/blog/levels-of-agentic-engineering?utm_source=tldrdev" --author "Bassim Eledath" --published 2026-03-10 --captured 2026-03-12`
+  - `python3 scripts/build_index.py`
+  - `python3 -c "import os; p='scripts/__pycache__/build_index.cpython-314.pyc'; os.remove(p) if os.path.exists(p) else None"`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
