@@ -896,3 +896,30 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-13 — Summarize guide chapter: Simon Willison on using AI to produce better code
+
+- What I did: Read the guide chapter at `https://simonwillison.net/guides/agentic-engineering-patterns/better-code/?utm_source=tldrnewsletter`, created a new article summary, and captured its core argument that teams should use AI to reduce technical debt, explore more options, and improve quality rather than accept lower standards.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-10_ai-should-help-us-produce-better-code.md`](articles/2026/2026-03-10_ai-should-help-us-produce-better-code.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Used the chapter title `AI should help us produce better code` rather than the broader guide title because the summary files should map to the specific page summarized.
+  - Recorded the publication date as `2026-03-10` based on the page’s explicit “Created” date; the page also notes a last modification on `2026-03-11`.
+  - Focused the summary on three actionable themes from the chapter: cheap refactors, exploratory prototyping, and the compound-engineering feedback loop.
+- Assumptions:
+  - Publication date taken from the page’s “Created: 10th March 2026” marker and recorded as `2026-03-10`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `tail -n 50 AGENT_LOG.md`
+  - `sed -n '1,180p' templates/article-summary.md`
+  - `curl -L --show-error --fail 'https://simonwillison.net/guides/agentic-engineering-patterns/better-code/?utm_source=tldrnewsletter' -o /tmp/better-code.html`
+  - `rg -n 'title|author|og:title|twitter:title|<h2 class=\"archive-h2\"|Created:|Last modified:|pubdate|date|better code|AI should help us produce better code' /tmp/better-code.html | head -n 120`
+  - `sed -n '52,118p' /tmp/better-code.html`
+  - `python3 scripts/new_article.py --title 'AI should help us produce better code' --url 'https://simonwillison.net/guides/agentic-engineering-patterns/better-code/?utm_source=tldrnewsletter' --author 'Simon Willison' --published 2026-03-10 --captured 2026-03-13`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
