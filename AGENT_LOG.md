@@ -841,3 +841,30 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-13 — Summarize external article: Steve Krenzel on agentic coding and “good code”
+
+- What I did: Read the article at `https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code?utm_source=tldrdev`, created a new article summary, and captured its central argument that agentic coding raises the value of software engineering disciplines like tests, types, naming, and fast environment automation.
+- Files created/modified:
+  - Created: [`articles/2025/2025-12-29_ai-is-forcing-us-to-write-good-code.md`](articles/2025/2025-12-29_ai-is-forcing-us-to-write-good-code.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Recorded the publication date as `2025-12-29` because the page metadata explicitly lists `datePublished` on that date, even though the user added it on March 13, 2026.
+  - Kept the summary organized around the article’s concrete engineering investments instead of following the essay section-by-section verbatim.
+  - Treated the stronger claims about 100% coverage, file-size effects, and TypeScript superiority as “Claims worth validating” because the article is mostly experience-based.
+- Assumptions:
+  - Publication date taken from page metadata (`2025-12-29T18:30:28+00:00`) and recorded as `2025-12-29`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `tail -n 50 AGENT_LOG.md`
+  - `sed -n '1,180p' templates/article-summary.md`
+  - `curl -L --show-error --fail 'https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code?utm_source=tldrdev' -o /tmp/logic-good-code.html`
+  - `rg -n 'title|author|datePublished|article:published_time|og:title|twitter:title|<h1|good code|AI|Logic|Substack|maintain|test|abstraction|documentation|type' /tmp/logic-good-code.html | head -n 120`
+  - `python3 - <<'PY' ... PY` (parsed `window._preloads` from `/tmp/logic-good-code.html` to extract article body text for summarization)
+  - `python3 scripts/new_article.py --title 'AI Is Forcing Us To Write Good Code' --url 'https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code?utm_source=tldrdev' --author 'Steve Krenzel' --published 2025-12-29 --captured 2026-03-13`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed under `2025`.
+- Open questions / ambiguities:
+  - None at capture time.
