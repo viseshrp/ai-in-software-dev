@@ -950,3 +950,30 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed under `2025`.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-13 — Summarize external article: Jerred Shepherd on what AI has helped him build
+
+- What I did: Read the article at `https://sjer.red/blog/2026/built-with-ai/`, created a new article summary, and captured its main contribution as a first-person report on shifting from skepticism to prompt-and-review workflows across a large number of personal and work projects.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-09_things-i-ve-done-with-ai.md`](articles/2026/2026-03-09_things-i-ve-done-with-ai.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Used `Jerred Shepherd` as the author based on the page’s site metadata and canonical site identity.
+  - Focused the summary on the mindset shift, project list, and the testing/documentation bottleneck because those are the strongest themes in the piece.
+  - Treated the strongest claims about not writing code manually and about maintainability being less important under strong tests as items worth validating because they are personal but broad in implication.
+- Assumptions:
+  - Publication date taken from the page’s `<time datetime="2026-03-09T07:00:00.000Z">` marker and recorded as `2026-03-09`.
+  - Used the canonical page URL as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `tail -n 45 AGENT_LOG.md`
+  - `sed -n '1,180p' templates/article-summary.md`
+  - `curl -L --show-error --fail 'https://sjer.red/blog/2026/built-with-ai/' -o /tmp/built-with-ai.html`
+  - `rg -n 'title|author|datePublished|article:published_time|og:title|twitter:title|<h1|built with ai|AI|Sjer|published|datetime' /tmp/built-with-ai.html | head -n 120`
+  - `sed -n '39,115p' /tmp/built-with-ai.html`
+  - `python3 scripts/new_article.py --title \"Things I've done with AI\" --url 'https://sjer.red/blog/2026/built-with-ai/' --author 'Jerred Shepherd' --published 2026-03-09 --captured 2026-03-13`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
