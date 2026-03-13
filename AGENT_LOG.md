@@ -923,3 +923,30 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-13 — Summarize external article: Every on compound engineering
+
+- What I did: Read the article at `https://every.to/chain-of-thought/compound-engineering-how-every-codes-with-agents`, created a new article summary, and captured its main contribution: a four-step “compound engineering” loop for planning, working, assessing, and feeding lessons back into future agent runs.
+- Files created/modified:
+  - Created: [`articles/2025/2025-12-11_compound-engineering-how-every-codes-with-agents.md`](articles/2025/2025-12-11_compound-engineering-how-every-codes-with-agents.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Recorded the publication date as `2025-12-11` because the page metadata explicitly lists that date, even though the page was modified later on March 11, 2026.
+  - Focused the summary on the four-step loop and the compounding mechanism because that is the article’s main reusable framework.
+  - Treated the strongest productivity and “manual work is unnecessary” statements as claims worth validating because they are ambitious and experience-based.
+- Assumptions:
+  - Publication date taken from page metadata (`2025-12-11T11:00:00-05:00`) and recorded as `2025-12-11`.
+  - Used the canonical page URL without extra tracking parameters as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `tail -n 50 AGENT_LOG.md`
+  - `sed -n '1,180p' templates/article-summary.md`
+  - `curl -L --show-error --fail 'https://every.to/chain-of-thought/compound-engineering-how-every-codes-with-agents' -o /tmp/compound-engineering.html`
+  - `rg -n 'title|author|datePublished|article:published_time|og:title|twitter:title|<h1|compound engineering|Every|Dan Shipper|Kieran|agents' /tmp/compound-engineering.html | head -n 120`
+  - `sed -n '507,545p' /tmp/compound-engineering.html`
+  - `python3 scripts/new_article.py --title 'Compound Engineering: How Every Codes With Agents' --url 'https://every.to/chain-of-thought/compound-engineering-how-every-codes-with-agents' --author 'Dan Shipper and Kieran Klaassen' --published 2025-12-11 --captured 2026-03-13`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed under `2025`.
+- Open questions / ambiguities:
+  - None at capture time.
