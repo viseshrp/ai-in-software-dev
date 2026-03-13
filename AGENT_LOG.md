@@ -749,3 +749,31 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-12 — Summarize external article: Jim Yagmin on docs directories and context management
+
+- What I did: Read the article at `https://yagmin.com/blog/your-docs-directory-is-doomed/?utm_source=tldrdev`, created a new article summary, and captured the core argument that ad hoc markdown context systems (`CLAUDE.md`, `AGENTS.md`, `/docs`, specs) are a temporary stage that will break down without better context architecture.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-05_your-docs-directory-is-doomed.md`](articles/2026/2026-03-05_your-docs-directory-is-doomed.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Focused the summary on the article’s structural argument about context management rather than treating it as a generic anti-docs piece.
+  - Preserved the author’s four design properties for better context systems: organization-owned, navigable, composable, and code-aware.
+  - Treated context-driven development (CDD) as an interpretive proposal rather than an established method, so its strongest promises are in “Claims worth validating.”
+- Assumptions:
+  - Publication date taken from the page (`05 Mar 2026`) and recorded as `2026-03-05`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `curl -L --show-error --fail "https://yagmin.com/blog/your-docs-directory-is-doomed/?utm_source=tldrdev" -o /tmp/your-docs-directory-is-doomed.html`
+  - `tail -n 40 AGENT_LOG.md`
+  - `rg -n "title|author|published|date|og:|description|ld\\+json|application/ld\\+json|article:published_time|byline|time datetime|<h1|docs|directory|Yagmin|yagmin" /tmp/your-docs-directory-is-doomed.html`
+  - `sed -n '1,360p' /tmp/your-docs-directory-is-doomed.html`
+  - `python3 scripts/new_article.py --title "Your Docs Directory Is Doomed" --url "https://yagmin.com/blog/your-docs-directory-is-doomed/?utm_source=tldrdev" --author "Jim Yagmin" --published 2026-03-05 --captured 2026-03-12`
+  - `python3 scripts/build_index.py`
+  - `python3 -c "import os; p='scripts/__pycache__/build_index.cpython-314.pyc'; os.remove(p) if os.path.exists(p) else None"`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
