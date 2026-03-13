@@ -814,3 +814,30 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-13 — Summarize external article: Tomasz Tunguz on AI and the “marginal hire”
+
+- What I did: Read the article at `https://tomtunguz.com/marginal-hire/?utm_source=tldrnewsletter`, created a new article summary, and captured the main thesis that AI’s employment impact may show up first as canceled future hires rather than visible layoffs.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-11_the-marginal-hire.md`](articles/2026/2026-03-11_the-marginal-hire.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Treated the piece as a framing/background source rather than a data-heavy analysis because the post is short and primarily advances a thesis.
+  - Preserved “marginal hire” as the organizing concept because it is the article’s main contribution and the clearest reusable lens for later synthesis.
+  - Put the job-openings numbers and restructuring forecast into “Claims worth validating” because the article asserts them with limited methodological detail in the post itself.
+- Assumptions:
+  - Publication date taken from page metadata (`2026-03-11T00:00:00Z`) and recorded as `2026-03-11`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `sed -n '1,200p' templates/article-summary.md`
+  - `tail -n 60 AGENT_LOG.md`
+  - `curl -L --show-error --fail 'https://tomtunguz.com/marginal-hire/?utm_source=tldrnewsletter' -o /tmp/marginal-hire.html`
+  - `rg -n 'title|author|datePublished|article:published_time|og:title|twitter:title|<h1|Tom|hire|employee|AI|marginal|software engineer|revenue' /tmp/marginal-hire.html | head -n 80`
+  - `sed -n '470,530p' /tmp/marginal-hire.html`
+  - `python3 scripts/new_article.py --title 'The Marginal Hire' --url 'https://tomtunguz.com/marginal-hire/?utm_source=tldrnewsletter' --author 'Tomasz Tunguz' --published 2026-03-11 --captured 2026-03-13`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
