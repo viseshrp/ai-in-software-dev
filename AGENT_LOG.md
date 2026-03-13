@@ -868,3 +868,31 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed under `2025`.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-13 — Summarize guide chapter: Simon Willison on code becoming cheap
+
+- What I did: Read the guide chapter at `https://simonwillison.net/guides/agentic-engineering-patterns/code-is-cheap/`, created a new article summary, and captured its main framing argument that agentic engineering changes software economics by making code production cheap while leaving “good code” expensive.
+- Files created/modified:
+  - Created: [`articles/2026/2026-02-23_writing-code-is-cheap-now.md`](articles/2026/2026-02-23_writing-code-is-cheap-now.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Used the chapter title `Writing code is cheap now` rather than the broader guide title, because the summary files should track the specific page being summarized.
+  - Recorded the publication date as `2026-02-23` based on the page’s explicit “Created” date; the page also notes a last modification on `2026-02-24`.
+  - Treated the piece as a framing chapter rather than a detailed workflow guide because it is short and conceptual.
+- Assumptions:
+  - Publication date taken from the page’s “Created: 23rd February 2026” marker and recorded as `2026-02-23`.
+  - Preserved the user-provided canonical URL as `source_url`.
+- Commands run (if any):
+  - `git status --short`
+  - `tail -n 60 AGENT_LOG.md`
+  - `sed -n '1,180p' templates/article-summary.md`
+  - `curl -L --show-error --fail 'https://simonwillison.net/guides/agentic-engineering-patterns/code-is-cheap/' -o /tmp/code-is-cheap.html`
+  - `rg -n 'title|author|datePublished|article:published_time|og:title|twitter:title|<h1|Simon|code is cheap|agentic|LLM|generated code|maintain' /tmp/code-is-cheap.html | head -n 120`
+  - `rg -n 'pubdate|date|datetime|Published|Updated|202[0-9]|time' /tmp/code-is-cheap.html | head -n 80`
+  - `sed -n '52,95p' /tmp/code-is-cheap.html`
+  - `python3 scripts/new_article.py --title 'Writing code is cheap now' --url 'https://simonwillison.net/guides/agentic-engineering-patterns/code-is-cheap/' --author 'Simon Willison' --published 2026-02-23 --captured 2026-03-13`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
