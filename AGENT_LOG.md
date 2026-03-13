@@ -777,3 +777,40 @@ This is a running log of work performed in this repository so future agents can 
   - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
 - Open questions / ambiguities:
   - None at capture time.
+
+## 2026-03-13 — Summarize external article: Jina Yoon on product-management skills for engineers
+
+- What I did: Read the article at `https://newsletter.posthog.com/p/an-engineers-guide-to-product-management?utm_source=tldrdev`, created a new article summary, and captured the post’s central argument that engineers should borrow three PM skills as implementation gets easier: gathering context, operating feedback loops, and communicating toward action.
+- Files created/modified:
+  - Created: [`articles/2026/2026-03-11_wtf-does-a-product-manager-do-and-why-engineers-should-care.md`](articles/2026/2026-03-11_wtf-does-a-product-manager-do-and-why-engineers-should-care.md)
+  - Modified: [`AGENT_LOG.md`](AGENT_LOG.md)
+  - Modified: [`INDEX.md`](INDEX.md)
+- Decisions made (and why):
+  - Used the article’s on-page title, `WTF does a product manager do? (and why engineers should care)`, rather than the URL slug text because the summary files follow published titles.
+  - Kept the summary centered on the article’s three-skill framework because that is the clearest reusable structure in the source.
+  - Treated the Duolingo, Canva, Figma, and PostHog metrics as “Claims worth validating” because the article uses them as evidence but does not reproduce their full underlying methodology.
+- Assumptions:
+  - Publication date taken from page metadata (`2026-03-11T21:11:01+00:00`) and recorded as `2026-03-11`.
+  - Preserved the user-provided URL, including the UTM parameter, as `source_url`.
+- Commands run (if any):
+  - `pwd && rg --files .`
+  - `sed -n '1,220p' AGENTS.md`
+  - `sed -n '1,220p' CONTRIBUTING.md`
+  - `sed -n '1,240p' docs/SUMMARY_GUIDE.md`
+  - `sed -n '1,240p' INDEX.md`
+  - `sed -n '1,240p' AGENT_LOG.md`
+  - `sed -n '1,240p' templates/article-summary.md`
+  - `sed -n '1,240p' articles/2026/2026-03-08_do-ai-enabled-companies-need-fewer-people.md`
+  - `python3 scripts/new_article.py --help`
+  - `git status --short`
+  - `curl -L --show-error --fail 'https://newsletter.posthog.com/p/an-engineers-guide-to-product-management?utm_source=tldrdev' -o /tmp/posthog_pm.html`
+  - `rg -n 'author|datePublished|og:title|twitter:title|Product|engineer|PM|JTBD|trade|roadmap|prototype|interview|metric' /tmp/posthog_pm.html | head -n 120`
+  - `rg -n 'body_html|truncated_body_text|bodyHtml|bodyJson' /tmp/posthog_pm.html | head -n 20`
+  - `python3 scripts/new_article.py --title 'WTF does a product manager do? (and why engineers should care)' --url 'https://newsletter.posthog.com/p/an-engineers-guide-to-product-management?utm_source=tldrdev' --author 'Jina Yoon' --published 2026-03-11 --captured 2026-03-13`
+  - `python3 - <<'PY' ... PY` (parsed `window._preloads` from `/tmp/posthog_pm.html` to extract article body text for summarization)
+  - `sed -n '1,220p' articles/2026/2026-03-11_wtf-does-a-product-manager-do-and-why-engineers-should-care.md`
+  - `tail -n 80 AGENT_LOG.md`
+- Test results (if relevant):
+  - `python3 scripts/build_index.py` completed successfully and regenerated [`INDEX.md`](INDEX.md) with the new article listed.
+- Open questions / ambiguities:
+  - None at capture time.
